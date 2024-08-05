@@ -1,0 +1,15 @@
+{
+  "name": "fullstackopen",
+  "version": "1.0.0",
+  "description": "recap the nodejs and express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SamLam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
