@@ -108,3 +108,22 @@ will send the notes array that was passed to it as a JSON formatted string.
 'express' automatically sets the Content-Type header with the appropriate value of application/json
 `)
 ```
+
+## nodemon
+1. `npm install --save-dev nodemon`
+2. adding a new script command in the `package.json`
+```json
+"dev": "nodemon index.js",
+```
+- nodemon will watch, automatically restart your node application if any files change.
+
+## REST
+- REST is an architectural style meant for building scalable web applications.
+
+### Parameters
+```js
+const id = request.params.id
+explain(
+  `The id parameter in the route of a request can be accessed through the 'request' object`
+)
+```
