@@ -127,3 +127,29 @@ explain(
   `The id parameter in the route of a request can be accessed through the 'request' object`
 )
 ```
+
+## test API
+1. postman -- vs code or on the website
+
+2. REST client -- vs code => 
+  Save all the REST client requests in the directory as files that end with the .rest extension. =>
+  right click the send request text, then the response from the server is opened in the editor.
+
+## Receiving data
+```js
+app.use(express.json())
+explain(`
+'express - json-parser' => help us to easily access the data.
+The 'json-parser' takes the JSON data of a request, transforms it into a JS object and 
+then attaches it to the body property of the request object before the route handler is called.
+`)
+
+app.post('/api/notes', (request, response) => {
+  const note = request.body;
+  console.log(note);
+  response.json(note);
+})
+explain(`
+Sending all the information for the new note in the request body in JSON format
+`)
+```
