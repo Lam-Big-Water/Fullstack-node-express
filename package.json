@@ -2,10 +2,10 @@
   "name": "fullstackopen",
   "version": "1.0.0",
   "description": "recap the nodejs and express",
-  "main": "index.js",
+  "main": "startWithMiddleware.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node startWithMiddleware.js",
+    "dev": "nodemon startWithMiddleware.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "SamLam",
@@ -14,6 +14,7 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.4"
   }
 }

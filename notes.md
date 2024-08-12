@@ -153,3 +153,21 @@ explain(`
 Sending all the information for the new note in the request body in JSON format
 `)
 ```
+
+## About HTTP request types
+- The HTTP standard talks about two properties related to request types, safety and idempotency.
+
+## Middleware
+- Middleware are functions that can be used for handling `request` and `response` objects.
+
+- Middleware is a function that receives three parameters
+```js
+const requestLogger = (request, response, next) => {
+  console.log('Method:', request.method)
+  console.log('Path:  ', request.path)
+  console.log('Body:  ', request.body)
+  console.log('---')
+  next()
+}
+// The next function yields control to the next middleware.
+```

@@ -1,27 +1,38 @@
 const express = require('express');
 const app = express();
 
-// json-parser
-app.use(express.json());
-
-
 let notes = [
-    {
-      id: "1",
-      content: "HTML is easy",
-      important: true
-    },
-    {
-      id: "2",
-      content: "Browser can execute only JavaScript",
-      important: false
-    },
-    {
-      id: "3",
-      content: "GET and POST are the most important methods of HTTP protocol",
-      important: true
-    }
-  ]
+  {
+    id: "1",
+    content: "HTML is easy",
+    important: true
+  },
+  {
+    id: "2",
+    content: "Browser can execute only JavaScript",
+    important: false
+  },
+  {
+    id: "3",
+    content: "GET and POST are the most important methods of HTTP protocol",
+    important: true
+  }
+]
+
+
+// middleware
+const requestLogger = (request, response, next) => {
+  console.log('Method:', request.method)
+  console.log('Path:  ', request.path)
+  console.log('Body:  ', request.body)
+  console.log('---')
+  next()
+}
+
+// use middleware
+app.use(express.json());
+app.use(requestLogger);
+
 
 app.get('/', (request, response) => {
     response.send('<h1>Hello World!</h1>')
