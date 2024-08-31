@@ -171,3 +171,32 @@ const requestLogger = (request, response, next) => {
 }
 // The next function yields control to the next middleware.
 ```
+
+# Same origin policy and CORS
+```http
+<!-- The same-origin policy is a security mechanism implemented by browsers in order to prevent session hijacking among other security vulnerabilities.
+ -->
+http://example.com:80/index.html
+  
+protocol: http
+host: example.com
+port: 80
+```
+
+## Install cors
+`npm install cors`
+```js
+const cors = require('cors')
+
+app.use(cors())
+```
+![Alt text](https://fullstackopen.com/static/2aa09f5e7969cf4ec229aceb70abfa26/664c8/100.png)
+
+
+# Application to the Internet
+```js
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
+```
